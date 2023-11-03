@@ -1,0 +1,570 @@
+<template>
+    <div class="wrapper" data-theme="default" data-layout="fluid" data-sidebar-layout="default">
+        <nav class="sidebar">
+            <div class="sidebar-content simplebar" data-simplebar="init">
+                <div class="simplebar-wrapper m-0">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper p-0" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content">
+                                    <a class="sidebar-brand" href="/">
+                                        <span class="sidebar-brand-text align-middle">
+                                            Hidayah App
+                                        </span>
+                                        <svg class="sidebar-brand-icon align-middle" width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" color="#FFFFFF" style="margin-left: -3px">
+                                            <path d="M12 4L20 8.00004L12 12L4 8.00004L12 4Z"></path>
+                                            <path d="M20 12L12 16L4 12"></path>
+                                            <path d="M20 16L12 20L4 16"></path>
+                                        </svg>
+                                    </a>
+                                    <div class="sidebar-user">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="flex-shrink-0">
+                                                <img :src="ava" class="avatar img-fluid rounded me-1" alt="Charles Hall">
+                                            </div>
+                                            <div class="flex-grow-1 ps-2">
+                                                <a class="sidebar-user-title dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                                    Charles Hall
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-start">
+                                                    <a class="dropdown-item" href="/pages-profile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-middle me-1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Profile</a>
+                                                    <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart align-middle me-1"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Analytics</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="/pages-settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings align-middle me-1"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Settings &amp;
+                                                        Privacy</a>
+                                                    <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle align-middle me-1"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg> Help Center</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#">Log out</a>
+                                                </div>
+
+                                                <div class="sidebar-user-subtitle">Designer</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="sidebar-nav">
+                                        <li class="sidebar-header">
+                                            Pages
+                                        </li>
+                                        <li class="sidebar-item active">
+                                            <a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders align-middle"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg> <span class="align-middle">Dashboards</span>
+                                            </a>
+                                            <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+                                                <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-ecommerce">E-Commerce <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/dashboard-crypto">Crypto <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">Pages</span>
+                                            </a>
+                                            <ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-settings">Settings</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-projects">Projects <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-clients">Clients <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-orders">Orders <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-pricing">Pricing <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-chat">Chat <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-blank">Blank Page</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/pages-profile">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-middle"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span class="align-middle">Profile</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/pages-invoice">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card align-middle"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> <span class="align-middle">Invoice</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/pages-tasks">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list align-middle"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> <span class="align-middle">Tasks</span>
+                                                <span class="sidebar-badge badge bg-primary">Pro</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/calendar">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar align-middle"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <span class="align-middle">Calendar</span>
+                                                <span class="sidebar-badge badge bg-primary">Pro</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users align-middle"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <span class="align-middle">Auth</span>
+                                            </a>
+                                            <ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-sign-in">Sign In</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-sign-up">Sign Up</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-reset-password">Reset Password <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-404">404 Page <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/pages-500">500 Page <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-header">
+                                            Components
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#ui" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase align-middle"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> <span class="align-middle">UI Elements</span>
+                                            </a>
+                                            <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-alerts">Alerts <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-buttons">Buttons</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-cards">Cards</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-general">General</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-grid">Grid</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-modals">Modals <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-offcanvas">Offcanvas <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-placeholders">Placeholders <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-tabs">Tabs <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/ui-typography">Typography</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#icons" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee align-middle"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg> <span class="align-middle">Icons</span>
+                                                <span class="sidebar-badge badge bg-light">1.500+</span>
+                                            </a>
+                                            <ul id="icons" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/icons-feather">Feather</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/icons-font-awesome">Font Awesome <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#forms" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle align-middle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span class="align-middle">Forms</span>
+                                            </a>
+                                            <ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-basic-inputs">Basic Inputs</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-layouts">Form Layouts <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-input-groups">Input Groups <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/tables-bootstrap">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list align-middle"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> <span class="align-middle">Tables</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="sidebar-header">
+                                            Plugins &amp; Addons
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#form-plugins" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square align-middle"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> <span class="align-middle">Form Plugins</span>
+                                            </a>
+                                            <ul id="form-plugins" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-advanced-inputs">Advanced Inputs <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-editors">Editors <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/forms-validation">Validation <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#datatables" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list align-middle"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg> <span class="align-middle">DataTables</span>
+                                            </a>
+                                            <ul id="datatables" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-responsive">Responsive Table <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-buttons">Table with Buttons <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-column-search">Column Search <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-fixed-header">Fixed Header <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-multi">Multi Selection <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/tables-datatables-ajax">Ajax Sourced Data <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#charts" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2 align-middle"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> <span class="align-middle">Charts</span>
+                                            </a>
+                                            <ul id="charts" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/charts-chartjs">Chart.js</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/charts-apexcharts">ApexCharts <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a class="sidebar-link" href="/notifications">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg> <span class="align-middle">Notifications</span>
+                                                <span class="sidebar-badge badge bg-primary">Pro</span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#maps" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map align-middle"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg> <span class="align-middle">Maps</span>
+                                            </a>
+                                            <ul id="maps" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/maps-google">Google Maps</a></li>
+                                                <li class="sidebar-item"><a class="sidebar-link" href="/maps-vector">Vector Maps <span class="sidebar-badge badge bg-primary">Pro</span></a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-item">
+                                            <a data-bs-target="#multi" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-right-down align-middle"><polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path></svg> <span class="align-middle">Multi Level</span>
+                                            </a>
+                                            <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                                <li class="sidebar-item">
+                                                    <a data-bs-target="#multi-2" data-bs-toggle="collapse" class="sidebar-link collapsed">Two Levels</a>
+                                                    <ul id="multi-2" class="sidebar-dropdown list-unstyled collapse">
+                                                        <li class="sidebar-item">
+                                                            <a class="sidebar-link" href="#">Item 1</a>
+                                                        </li>
+                                                        <li class="sidebar-item">
+                                                            <a class="sidebar-link" href="#">Item 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar-item">
+                                                    <a data-bs-target="#multi-3" data-bs-toggle="collapse" class="sidebar-link collapsed">Three Levels</a>
+                                                    <ul id="multi-3" class="sidebar-dropdown list-unstyled collapse">
+                                                        <li class="sidebar-item">
+                                                            <a data-bs-target="#multi-3-1" data-bs-toggle="collapse" class="sidebar-link collapsed">Item 1</a>
+                                                            <ul id="multi-3-1" class="sidebar-dropdown list-unstyled collapse">
+                                                                <li class="sidebar-item">
+                                                                    <a class="sidebar-link" href="#">Item 1</a>
+                                                                </li>
+                                                                <li class="sidebar-item">
+                                                                    <a class="sidebar-link" href="#">Item 2</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sidebar-item">
+                                                            <a class="sidebar-link" href="#">Item 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <div class="sidebar-cta">
+                                        <div class="sidebar-cta-content">
+                                            <strong class="d-inline-block mb-2">Weekly Sales Report</strong>
+                                            <div class="mb-3 text-sm">
+                                                Your weekly sales report is ready for download!
+                                            </div>
+
+                                            <div class="d-grid">
+                                                <a href="https://adminkit.io/" class="btn btn-outline-primary" target="_blank">Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="main">
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <a class="sidebar-toggle js-sidebar-toggle">
+                    <i class="hamburger align-self-center"></i>
+                </a>
+
+                <form class="d-none d-sm-inline-block">
+                    <div class="input-group input-group-navbar">
+                        <input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+                        <button class="btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search align-middle"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav d-none d-lg-flex">
+                    <li class="nav-item px-2 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="megaDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mega Menu
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-start dropdown-mega" aria-labelledby="megaDropdown">
+                            <div class="d-md-flex align-items-start justify-content-start">
+                                <div class="dropdown-mega-list">
+                                    <div class="dropdown-header">UI Elements</div>
+                                    <a class="dropdown-item" href="#">Alerts</a>
+                                    <a class="dropdown-item" href="#">Buttons</a>
+                                    <a class="dropdown-item" href="#">Cards</a>
+                                    <a class="dropdown-item" href="#">Carousel</a>
+                                    <a class="dropdown-item" href="#">General</a>
+                                    <a class="dropdown-item" href="#">Grid</a>
+                                    <a class="dropdown-item" href="#">Modals</a>
+                                    <a class="dropdown-item" href="#">Tabs</a>
+                                    <a class="dropdown-item" href="#">Typography</a>
+                                </div>
+                                <div class="dropdown-mega-list">
+                                    <div class="dropdown-header">Forms</div>
+                                    <a class="dropdown-item" href="#">Layouts</a>
+                                    <a class="dropdown-item" href="#">Basic Inputs</a>
+                                    <a class="dropdown-item" href="#">Input Groups</a>
+                                    <a class="dropdown-item" href="#">Advanced Inputs</a>
+                                    <a class="dropdown-item" href="#">Editors</a>
+                                    <a class="dropdown-item" href="#">Validation</a>
+                                    <a class="dropdown-item" href="#">Wizard</a>
+                                </div>
+                                <div class="dropdown-mega-list">
+                                    <div class="dropdown-header">Tables</div>
+                                    <a class="dropdown-item" href="#">Basic Tables</a>
+                                    <a class="dropdown-item" href="#">Responsive Table</a>
+                                    <a class="dropdown-item" href="#">Table with Buttons</a>
+                                    <a class="dropdown-item" href="#">Column Search</a>
+                                    <a class="dropdown-item" href="#">Muulti Selection</a>
+                                    <a class="dropdown-item" href="#">Ajax Sourced Data</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Resources
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                            <a class="dropdown-item" href="https://adminkit.io/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home align-middle me-1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                Homepage</a>
+                            <a class="dropdown-item" href="https://adminkit.io/docs/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open align-middle me-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                Documentation</a>
+                            <a class="dropdown-item" href="https://adminkit.io/docs/getting-started/changelog/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit align-middle me-1"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Changelog</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav navbar-align">
+                        <li class="nav-item dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                                <div class="position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                    <span class="indicator">4</span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+                                <div class="dropdown-menu-header">
+                                    4 New Notifications
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle text-danger"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="text-dark">Update completed</div>
+                                                <div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+                                                <div class="text-muted small mt-1">30m ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell text-warning"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="text-dark">Lorem ipsum</div>
+                                                <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+                                                <div class="text-muted small mt-1">2h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home text-primary"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="text-dark">Login from 192.186.1.8</div>
+                                                <div class="text-muted small mt-1">5h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus text-success"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="text-dark">New connection</div>
+                                                <div class="text-muted small mt-1">Christina accepted your request.</div>
+                                                <div class="text-muted small mt-1">14h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-menu-footer">
+                                    <a href="#" class="text-muted">Show all notifications</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown" aria-expanded="true">
+                                <div class="position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square align-middle"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown" data-bs-popper="static">
+                                <div class="dropdown-menu-header">
+                                    <div class="position-relative">
+                                        4 New Messages
+                                    </div>
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <img :src="ava5" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                            </div>
+                                            <div class="col-10 ps-2">
+                                                <div class="text-dark">Vanessa Tucker</div>
+                                                <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+                                                <div class="text-muted small mt-1">15m ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <img :src="ava2" class="avatar img-fluid rounded-circle" alt="William Harris">
+                                            </div>
+                                            <div class="col-10 ps-2">
+                                                <div class="text-dark">William Harris</div>
+                                                <div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+                                                <div class="text-muted small mt-1">2h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <img :src="ava4" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+                                            </div>
+                                            <div class="col-10 ps-2">
+                                                <div class="text-dark">Christina Mason</div>
+                                                <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+                                                <div class="text-muted small mt-1">4h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-2">
+                                                <img :src="ava3" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                            </div>
+                                            <div class="col-10 ps-2">
+                                                <div class="text-dark">Sharon Lessman</div>
+                                                <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+                                                <div class="text-muted small mt-1">5h ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-menu-footer">
+                                    <a href="#" class="text-muted">Show all messages</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown">
+                                <img :src="english" alt="English">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <img :src="english" alt="English" width="20" class="align-middle me-1">
+                                    <span class="align-middle">English</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img :src="spannish" alt="Spanish" width="20" class="align-middle me-1">
+                                    <span class="align-middle">Spanish</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img :src="russian" alt="Russian" width="20" class="align-middle me-1">
+                                    <span class="align-middle">Russian</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <img :src="german" alt="German" width="20" class="align-middle me-1">
+                                    <span class="align-middle">German</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                <img :src="ava" class="avatar img-fluid rounded" alt="Charles Hall">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="/pages-profile"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-middle me-1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> Profile</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart align-middle me-1"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Analytics</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/pages-settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings align-middle me-1"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Settings &amp;
+                                    Privacy</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle align-middle me-1"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg> Help Center</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content">
+                <router-view></router-view>
+            </main>
+            <footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a href="https://adminkit.io/" target="_blank" class="text-muted"><strong>Hidayah App</strong></a> © 2023
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+        </div>
+    </div>
+    <SettingPanel />
+</template>
+
+<script setup>
+    /** Import custom css */
+    import '@/assets/css/logged-light.css';
+    /** Import components */
+    import SettingPanel from '@/components/organisms/_setting-panel.vue';
+    /** Import images asset */
+    // Avatar
+    import ava from '@/assets/images/avatar.jpg';
+    import ava2 from '@/assets/images/avatar-2.jpg';
+    import ava3 from '@/assets/images/avatar-3.jpg';
+    import ava4 from '@/assets/images/avatar-4.jpg';
+    import ava5 from '@/assets/images/avatar-5.jpg';
+    // Flag
+    import german from '@/assets/images/flags/de.png';
+    import spannish from '@/assets/images/flags/es.png';
+    import russian from '@/assets/images/flags/ru.png';
+    import english from '@/assets/images/flags/us.png';
+</script>
+
+<style></style>
