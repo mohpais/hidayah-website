@@ -38,6 +38,7 @@ export const useSettingPanelStore = defineStore("setting-panel", {
             if (session) {
                 const parsedSettings = JSON.parse(Helpers.dec(session, 1, 6));
                 this.$state = parsedSettings;
+                console.log(this.$state);
                 document.body.setAttribute("data-sidebar-layout", this.sidebarLayout);
                 document.body.setAttribute("data-theme", this.panelTheme);
             }
@@ -52,11 +53,8 @@ export const useSettingPanelStore = defineStore("setting-panel", {
                 if (session) {
                     setting = JSON.parse(Helpers.dec(session, 1, 6));
                 }
-                // isCollapsed = localStorage.getItem("isCollapsed") === "true" ? true : false;
             }
-            console.log('jembut monyet', setting);
             localStorage.setItem('pnlst', Helpers.enc(JSON.stringify(setting), 1, 6));
-            // localStorage.setItem("isCollapsed", isCollapsed);
         },
     },
 });

@@ -37,6 +37,7 @@
     const settingPanelStore = useSettingPanelStore();
 
     const isDevelopment = computed(() => import.meta.env.VITE_APP_ENV === 'local');
+    
     const isCollapsed = ref(settingPanelStore.isCollapsed);
     
     /** Define method */
