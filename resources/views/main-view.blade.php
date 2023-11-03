@@ -22,7 +22,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/css/animate.css', 'resources/js/main.js'])
 </head>
-    <body id="app" data-sidebar-layout="compact">
+    <body id="app">
         <router-view></router-view>
     </body>
 </html>
