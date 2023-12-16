@@ -78,6 +78,18 @@ export default [
                         { name: "Dashboard", link: "/panel/dashboard" },
                     ],
                 },
+            },
+            {
+                path: "/panel/profile",
+                name: "Profile",
+                component: () => import('@/views/_panels/Profile.vue'),
+                meta: {
+                    title: "Profile",
+                    breadcrumbs: [
+                        { name: 'Home', link: '' },
+                        { name: "Profile", link: "/panel/profile" },
+                    ],
+                },
             }
         ]
     }
