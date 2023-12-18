@@ -65,4 +65,4 @@ By amalgamating technology with religious guidance, the app strives to empower i
 
 # Setup Environment
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clone Hidayah Website project on [Github](https://github.com/mohpais/hidayah-website).
