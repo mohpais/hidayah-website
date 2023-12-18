@@ -65,4 +65,32 @@ By amalgamating technology with religious guidance, the app strives to empower i
 
 # Setup Environment
 
-1. Clone Hidayah Website project on [Github](https://github.com/mohpais/hidayah-website).
+1. Clone project on Github [Hidayah Website](https://github.com/mohpais/hidayah-website) using this command
+```
+git clone https://github.com/mohpais/hidayah-website
+```
+2. Copy .env.example using command 
+```
+cp .env.exampe .env
+```
+3. Connect Database by updating .env like this:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOUR_DB_NAME
+DB_USERNAME=YOUR_DB_USERNAME
+DB_PASSWORD=YOUR_DB_PASSWORD
+```
+4. Migrate the database using this command:
+```
+php artisan migrate
+```
+5. Then generate JWT secret key like:
+```
+php artisan jwt:secret
+```
+6. Running 
+```
+php artisan serve
+```
