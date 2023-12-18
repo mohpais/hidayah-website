@@ -65,7 +65,7 @@ export default [
         name: "Panel",
         redirect: { name: "Dashboard" },
         meta: { layout: "logged-layout" },
-        // beforeEnter: requireLogin,
+        beforeEnter: requireLogin,
         children: [
             {
                 path: "/panel/dashboard",
