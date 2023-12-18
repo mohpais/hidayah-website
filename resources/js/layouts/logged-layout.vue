@@ -1,10 +1,10 @@
 <template>
     <div class="wrapper">
         <!-- Sidebar Page -->
-        <SidebarPanel :isCollapsed="isCollapsed" />
+        <SidebarPanel :isCollapsed="settingPanelStore.isCollapsed" />
         <div class="main">
             <!-- Header Page -->
-            <NavbarPanel  @handleSidebar="handleSidebar()"/>
+            <NavbarPanel  @handleSidebar="handleSidebar(!settingPanelStore.isCollapsed)"/>
             <main class="content">
                 <router-view></router-view>
             </main>
@@ -30,20 +30,16 @@
     import SidebarPanel from '@/components/organisms/logged/SidebarPage.vue';
     import NavbarPanel from '@/components/organisms/logged/NavbarPage.vue';
     import FooterPanel from '@/components/organisms/logged/FooterPage.vue';
-
-    
     
     /**  Define variables and store */
     const settingPanelStore = useSettingPanelStore();
 
     const isDevelopment = computed(() => import.meta.env.VITE_APP_ENV === 'local');
     
-    const isCollapsed = ref(settingPanelStore.isCollapsed);
     
     /** Define method */
     const handleSidebar = () => {
-        isCollapsed.value = !isCollapsed.value;
-        settingPanelStore.setCollapsed(isCollapsed.value);
+        settingPanelStore.setCollapsed();
     };
 
     // Load settings from local storage when the app starts
