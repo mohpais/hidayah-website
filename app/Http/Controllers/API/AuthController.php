@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\JsonResponse;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -21,18 +24,38 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
+
         $credentials = $request->only('email', 'password');
         $token = Auth::attempt($credentials);
         
         if (!$token) {
             return response()->json([
+                'success' => false,
                 'message' => 'Unauthorized',
             ], 401);
         }
 
         $user = Auth::user();
+        $role = $user->role; // Access the user's role
+
+        // $expiresAt = Carbon::now()->addSeconds(3600); // Set expiration time to 1 hour from now
+        // $user->tokens()->create([
+        //     'name' => $user['email'],
+        //     'token' => $token,
+        //     'last_used_at' => Carbon::now(),
+        //     'expires_at' => $expiresAt
+        // ]);
+
         return response()->json([
-            'user' => $user,
+            'success' => true,
+            'user' => [
+                "userId" => $user["id"],
+                "name" => $user["name"],
+                "email" => $user["email"],
+                "gender" => $user["gender"],
+                "phone" => $user["phone"],
+                "role" => $user["role"]["name"],
+            ],
             'authorization' => [
                 'token' => $token,
                 'type' => 'bearer',
@@ -42,27 +65,35 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|min:8',
+        ], [
+            'password.confirmed' => 'The password confirmation does not match.',
+        ]);
+
+        if ($validator->fails()) {
+            // return response()->json(['errors' => $validator->errors()], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
+            return response()->json([
+                'success' => false,
+                'message' => $validator->errors(),
+                'user' => null
+            ]);
+        }
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
         return response()->json([
-            'message' => $request,
+            'success' => true,
+            'message' => 'User created successfully',
             'user' => $user
         ]);
-
-        // $user = User::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => Hash::make($request->password),
-        // ]);
-
-        // return response()->json([
-        //     'message' => 'User created successfully',
-        //     'user' => $user
-        // ]);
     }
 
     /**

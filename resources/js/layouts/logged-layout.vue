@@ -1,10 +1,10 @@
 <template>
     <div class="wrapper">
         <!-- Sidebar Page -->
-        <SidebarPanel :isCollapsed="settingPanelStore.isCollapsed" />
+        <SidebarPanel :authenticatedUser="authStore.authUser" :isCollapsed="settingPanelStore.isCollapsed" />
         <div class="main">
             <!-- Header Page -->
-            <NavbarPanel  @handleSidebar="handleSidebar(!settingPanelStore.isCollapsed)"/>
+            <NavbarPanel @handleSidebar="handleSidebar(!settingPanelStore.isCollapsed)" @handleLogout="handleLogout" />
             <main class="content">
                 <router-view></router-view>
             </main>
@@ -21,9 +21,10 @@
     
     /** Import package */
     import { ref, computed, onMounted, watch } from 'vue';
+    import { useRouter } from "vue-router";
     
     /** Import store */
-    import { useSettingPanelStore } from "@/stores";
+    import { useSettingPanelStore, useAuthStore } from "@/stores";
 
     /** Import components */
     import SettingPanel from '@/components/organisms/logged/SettingModal.vue';
@@ -31,19 +32,30 @@
     import NavbarPanel from '@/components/organisms/logged/NavbarPage.vue';
     import FooterPanel from '@/components/organisms/logged/FooterPage.vue';
     
+    /** Import global */
+    import helpers from '@/global/helpers';
+
     /**  Define variables and store */
     const settingPanelStore = useSettingPanelStore();
+    const authStore = useAuthStore();
+    const router = useRouter();
 
     const isDevelopment = computed(() => import.meta.env.VITE_APP_ENV === 'local');
-    
     
     /** Define method */
     const handleSidebar = () => {
         settingPanelStore.setCollapsed();
     };
 
+    const handleLogout = () => {
+        authStore.logout();
+        window.location.reload();
+    }
+
     // Load settings from local storage when the app starts
     onMounted(() => {
+        helpers.alertToast('success', "Login success!");
+        // console.log(authStore.authUser);
         if (import.meta.env.VITE_APP_ENV === 'local') {
             settingPanelStore.loadSettingsFromLocalStorage();
         }

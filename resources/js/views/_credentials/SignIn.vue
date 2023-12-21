@@ -17,19 +17,19 @@
                             </button>
                         </div>
                     </div>
-                    <small class="text-secondary fz-11">atau gunakan <span class="fw-bold fz-10">Akun terdaftar</span> anda!</small>
+                    <small class="text-secondary fz-12">or use your <span class="fw-bold fz-11">Registed account!</span></small>
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
                 <div class="col-sm-9">
-                    <form novalidate autocomplete="off">
+                    <form @submit.prevent="onSubmit" novalidate autocomplete="off">
                         <div class="form-group mb-2 animated fadeInUp">
-                            <!-- <label for="useremail" class="fz-11 font-poppins-bold">Username</label> -->
-                            <input type="text" class="form-control my-input" name="useremail" id="useremail"
-                                placeholder="Silahkan ketik username Anda" v-model="signin.useremail" required>
+                            <label for="email" class="fz-11 font-poppins-bold">Username</label>
+                            <input type="text" class="form-control my-input" name="email" id="email"
+                                placeholder="Silahkan ketik username Anda" v-model="signin.email" required>
                         </div>
                         <div class="form-group mb-5 position-relative animated fadeInUp delay-1">
-                            <!-- <label for="password" class="fz-11 font-poppins-bold">Password</label> -->
+                            <label for="password" class="fz-11 font-poppins-bold">Password</label>
                             <input :type="!showPass ? 'password' : 'text'" class="form-control my-input pe-5" name=""
                                 id="password" placeholder="Silahkan ketik password Anda" v-model="signin.password" required>
                             <i v-if="!showPass" @click="showPass = true" class="bi bi-eye-fill cursor" 
@@ -42,18 +42,17 @@
                                 <a href="#">Forgot Password?</a>
                             </div>
                             <div class="my-auto col-auto">
-                                <a href="#" class="px-4 btn btn-success rounded-pill font-poppins-semi-bold animated fadeInLeft my-btn">
-                                    <span class="trantition">Sign In</span>
-                                    <i class="fas fa-arrow-right d-inline ml-2 font-13"></i>
-                                </a>
-                                <!-- <button type="submit"
+                                <button type="submit"
+                                    :disabled="isLoading"
                                     class="px-4 btn btn-primary rounded-pill muli-ex-bold animated fadeInLeft my-btn">
-                                    <span class="trantition">Masuk</span>
-                                    <i ng-if="!isLoading" class="fas fa-arrow-right d-inline ml-2 font-13"></i>
-                                    <i ng-if="isLoading" class="fas fa-spinner fa-spin ml-2"></i>
-                                </button> -->
+                                    <span class="trantition">Sign In</span>
+                                    <i v-if="!isLoading" class="bi bi-arrow-right d-inline ms-2 font-13"></i>
+                                    <div v-if="isLoading" class="spinner-border spinner-border-sm ms-2" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
                                 <!-- pake loading ini ketika memuat data -->
-                                <i v-if="isLoading" class="fas fa-spinner fa-spin ml-2"></i>
+                                <i v-if="isLoading" class="fas fa-spinner fa-spin ms-2"></i>
                             </div>
                         </div>
                     </form>
@@ -64,13 +63,47 @@
 </template>
 
 <script setup>
+    /** Import package */
     import { reactive, ref } from "vue";
+    import { useRouter } from "vue-router";
+
+    /** Import global */
+    import { DoLogin } from "@/services"; // Import from Global Packages
+    import helpers from '@/global/helpers';
+
+    /**  Define variables */
     let showPass = ref(false); 
     let isLoading = ref(false); 
+
+    const router = useRouter();
     const signin = reactive({
-        useremail: "",
+        email: "",
         password: ""
-    })
+    });
+
+    /** Define method */
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        isLoading.value = true;
+        await DoLogin(signin)
+            .then(function successCallBack(response) {
+                var data = response.data;
+                console.log(data);
+                // if (data.success) {
+                //     var authorization = data.authorization;
+                //     var user = data.user;
+                //     sessionStorage.setItem("_xa", authorization.token);
+                //     sessionStorage.setItem("_us", helpers.enc(JSON.stringify(user), 1, 6));
+                //     window.location.reload();
+                // }
+            })
+            .catch(function errorCallBack(err) {
+                console.log(err);
+                helpers.alertToast(err);
+            });
+
+        isLoading.value = false;
+    }
 </script>
 
 <style>

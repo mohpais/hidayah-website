@@ -1,6 +1,6 @@
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.js";
 import { createToast } from "mosha-vue-toastify";
-import Swal from "sweetalert2/dist/sweetalert2.js";
+import Swal from "sweetalert2";
 import moment from "moment";
 
 var _Value = {
