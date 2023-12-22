@@ -15,7 +15,16 @@
                             </button>
                         </div>
                     </div>
-                    <table class="table">
+                    <div class="card-body">
+                        <!-- <MyTable :fields="fields" :data="studentData"></MyTable> -->
+                        <MyTable 
+                            :headers="fields"
+                            :items="studentData"
+                            :filters="filters"
+                            :search="true"
+                            :actions="actions" />
+                    </div>
+                    <!-- <table class="table">
                         <thead>
                             <tr>
                                 <th class="text-center" style="width:5%;">#</th>
@@ -77,9 +86,82 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+    /** Import package */
+    import { reactive, defineAsyncComponent, computed, watch } from "vue";
+
+    /**  Define variables */
+    const MyTable = defineAsyncComponent(() =>
+        import("@/components/organisms/MyTable.vue")
+    );
+
+    const studentData = [
+        { ID:"01", Name: "Abiola Esther", Description:"Computer Science", Date:"2023-12-22 14:57", Age:"17" },
+        { ID:"02", Name: "Robert V. Kratz", Description:"Philosophy", Date:"2023-12-22 14:57", Age:'19' },
+        { ID:"03", Name: "Kristen Anderson", Description:"Economics", Date:"2022-12-22 14:57", Age:'20' },
+        { ID:"04", Name: "Adam Simon", Description:"Food science", Date:"2023-12-22 14:57", Age:'21' },
+        { ID:"05", Name: "Daisy Katherine", Description:"Business studies", Date:"2023-12-22 14:57", Age:'22' },   
+    ];
+
+    // const fields = [
+    //   'ID','Name','Course','Gender','Age'
+    // ];
+
+    const fields = [
+        { key: 'ID', sortable: true },
+        { key: 'Name', width: '12%', sortable: true },
+        { key: 'Description', width: '24%', sortable: true, shorten: true, restrictToLen: 50 },
+        {
+          key: 'Date',
+          width: '18%',
+          sortable: true,
+          defaultSortBy: true,
+          defaultOrder: 'DESC'
+        },
+        { key: 'Age', width: '10%', sortable: true, dataType: 'float' },
+        { type: 'actions', key: '', width: '10%' }
+    ];
+
+    const filters = [
+        {
+          type: 'input-date',
+          key: 'Date',
+          min: '2017-05-04',
+          max: '2019-10-28',
+          label: 'Date'
+        },
+        {
+          type: 'select-range',
+          key: 'Age',
+          defaultOption: '-- Select One --',
+          options: [
+            { label: '-1000 to -501', value: { min: -1000, max: -501 } },
+            { label: '-500 to -1', value: { min: -500, max: -1 } },
+            { label: '0 to 499', value: { min: 0, max: 499 } },
+            { label: '500 to 1000', value: { min: 500, max: 1000 } }
+          ],
+          label: 'Age'
+        }
+    ];
+
+    const updatePayment = () => {
+        return 'payments/UPDATE_PAYMENT';
+    }
+
+    const actions = [
+        {
+            type: 'edit',
+            key: ['Description'],
+            func: updatePayment(),
+            icon: 'edit',
+            name: 'Edit'
+        }
+    ];
+</script>
