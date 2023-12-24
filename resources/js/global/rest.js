@@ -3,7 +3,7 @@ import Helpers from "./helpers";
 
 class Rest {
   constructor(_url) {
-    this._url = _url ?? "localhost:8000";
+    this._url = _url ?? "http://127.0.0.1:8000/api/";
     this.isRefreshing = false;
     this.failedRequests = [];
     this._XTOKEN = "_xa"; // used to be X-Token

@@ -80,6 +80,18 @@ export default [
                 },
             },
             {
+                path: "/panel/users",
+                name: "User",
+                component: () => import('@/views/_panels/User.vue'),
+                meta: {
+                    title: "User",
+                    breadcrumbs: [
+                        { name: `Home`, link: `` },
+                        { name: "User", link: "/panel/users" },
+                    ],
+                },
+            },
+            {
                 path: "/panel/profile",
                 name: "Profile",
                 component: () => import('@/views/_panels/Profile.vue'),

@@ -17456,6 +17456,13 @@ body[data-sidebar-layout=compact][data-sidebar-position=right] .sidebar.collapse
     border-top: 0
 }
 
+.table-action {
+    display: flex;
+    /* flex-direction: column;
+    text-align: center; */
+    justify-content: space-around;
+}
+
 .table-action a {
     color: #6c757d
 }

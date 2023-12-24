@@ -9,16 +9,16 @@
                     </div>
                     <div class="card-body text-center">
                         <img :src="ava4" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128">
-                        <h5 class="card-title mb-0">Christina Mason</h5>
+                        <h5 class="card-title mb-0">{{ authStore.authUser.name }}</h5>
                         <div class="text-muted mb-2">Lead Developer</div>
 
                         <div>
                             <a class="btn btn-primary btn-sm" href="#">Follow</a>
-                            <a class="btn btn-primary btn-sm" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Message</a>
+                            <a class="btn btn-primary btn-sm ms-1" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Message</a>
                         </div>
                     </div>
                     <hr class="my-0">
-                    <div class="card-body">
+                    <!-- <div class="card-body">
                         <h5 class="h6 card-title">Skills</h5>
                         <a href="#" class="badge bg-primary me-1 my-1">HTML</a>
                         <a href="#" class="badge bg-primary me-1 my-1">JavaScript</a>
@@ -30,7 +30,7 @@
                         <a href="#" class="badge bg-primary me-1 my-1">UI</a>
                         <a href="#" class="badge bg-primary me-1 my-1">UX</a>
                     </div>
-                    <hr class="my-0">
+                    <hr class="my-0"> -->
                     <div class="card-body">
                         <h5 class="h6 card-title">About</h5>
                         <ul class="list-unstyled mb-0">
@@ -178,12 +178,25 @@
 </template>
 
 <script setup>
+    /** Import package */
+    import { reactive, onMounted } from 'vue';
+
+    /** Import store */
+    import { useAuthStore } from "@/stores";
+
     /** Import images asset */
-    // Avatar
     import ava from '@/assets/images/avatar.jpg';
     import ava2 from '@/assets/images/avatar-2.jpg';
     import ava4 from '@/assets/images/avatar-4.jpg';
     import ava5 from '@/assets/images/avatar-5.jpg';
     import unsplash1 from '@/assets/images/unsplash1.jpg';
     import unsplash2 from '@/assets/images/unsplash2.jpg';
+    
+    /**  Define variables and store */
+    const authStore = useAuthStore();
+    const state = reactive(authStore.authUser);
+
+    onMounted(() => {
+        console.log(state);
+    })
 </script>

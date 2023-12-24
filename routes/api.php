@@ -3,13 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 
-// Route::controller(AuthController::class)->group(function () {
-//     Route::post('login', 'login');
-//     Route::post('register', 'register');
-//     Route::post('logout', 'logout');
-//     Route::post('refresh', 'refresh');
-// });
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,5 +23,11 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'me']);    
+});
+
+Route::group([
+    'prefix' => 'user'
+], function ($router) {
+    Route::get('/list', [UserController::class, 'index']);  
 });
 

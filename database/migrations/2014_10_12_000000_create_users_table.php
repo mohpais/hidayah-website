@@ -15,10 +15,19 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->enum('gender', ['Male', 'Female'])->default('Male');
+            $table->date('bod')->nullable();
+            $table->text('address')->nullable();
+            $table->string('profile')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // Define the foreign key for the role
+            // $table->unsignedBigInteger('role_id')->nullable();
+            // $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 

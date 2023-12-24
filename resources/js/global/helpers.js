@@ -1,6 +1,6 @@
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.js";
 import { createToast } from "mosha-vue-toastify";
-import Swal from "sweetalert2/dist/sweetalert2.js";
+import Swal from "sweetalert2";
 import moment from "moment";
 
 var _Value = {
@@ -691,6 +691,47 @@ let helpers = {
     let dateTime = moment(new Date(dateString)).format("YYYY-MM-DDTHH:mm:ss");
     return dateTime;
   },
+
+  INTERSECTION: ({ arrOfArr }) => {
+    return arrOfArr.reduce((a, b) => a.filter(c => b.includes(c)))
+  },
+
+  sortArrOfObj: ({ arr, key, order = 'DESC', dataType = 'string' }) => {
+    function compare(a, b) {
+      if (dataType === 'string') {
+        if (a[key].toLowerCase() < b[key].toLowerCase()) {
+          if (order === 'DESC')
+            return 1
+          else if (order === 'ASC')
+            return -1
+        }
+        if (a[key].toLowerCase() > b[key].toLowerCase()) {
+          if (order === 'DESC')
+            return -1
+          else if (order === 'ASC')
+            return 1
+        }
+        return 0;
+      }
+      else if (dataType === 'float') {
+        if (parseFloat(a[key]) < parseFloat(b[key])) {
+          if (order === 'DESC')
+            return 1
+          else if (order === 'ASC')
+            return -1
+        }
+        if (parseFloat(a[key]) > parseFloat(b[key])) {
+          if (order === 'DESC')
+            return -1
+          else if (order === 'ASC')
+            return 1
+        }
+        return 0;
+      }
+    }
+  
+    return arr.sort(compare);
+  }
 };
 
 export default helpers;
